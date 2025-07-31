@@ -2,13 +2,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Happy Monthsary, Jenifer! 💕</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Happy 13th Monthsary, Wifey! 💕</title>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
         }
 
         body {
@@ -108,7 +109,7 @@
         .heart {
             position: fixed;
             color: rgba(255, 107, 157, 0.8);
-            font-size: 20px;
+            font-size: 16px;
             animation: fall linear infinite;
             z-index: 0;
         }
@@ -129,25 +130,26 @@
             z-index: 1;
             max-width: 800px;
             margin: 0 auto;
-            padding: 20px;
+            padding: 15px;
         }
 
         /* Header */
         .header {
             text-align: center;
-            margin: 40px 0;
+            margin: 20px 0 30px 0;
             animation: fadeInDown 2s ease-out;
         }
 
         .header h1 {
-            font-size: 3.5em;
+            font-size: clamp(1.8em, 5vw, 3.5em);
             color: #ff6b9d;
             text-shadow: 0 0 20px rgba(255, 107, 157, 0.5);
             margin-bottom: 10px;
+            line-height: 1.2;
         }
 
         .header p {
-            font-size: 1.2em;
+            font-size: clamp(1em, 3vw, 1.2em);
             color: #c77dff;
             font-style: italic;
         }
@@ -160,7 +162,7 @@
         @keyframes fadeInDown {
             from {
                 opacity: 0;
-                transform: translateY(-50px);
+                transform: translateY(-30px);
             }
             to {
                 opacity: 1;
@@ -171,11 +173,11 @@
         /* Photo Slideshow */
         .slideshow-container {
             position: relative;
-            max-width: 500px;
-            margin: 40px auto;
-            border-radius: 20px;
+            max-width: 100%;
+            margin: 30px auto;
+            border-radius: 15px;
             overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
             animation: fadeInUp 2s ease-out 0.5s both;
         }
 
@@ -191,7 +193,7 @@
 
         .slide img {
             width: 100%;
-            height: 350px;
+            height: clamp(250px, 50vw, 350px);
             object-fit: cover;
         }
 
@@ -200,22 +202,22 @@
             bottom: 0;
             left: 0;
             right: 0;
-            background: linear-gradient(transparent, rgba(0,0,0,0.7));
+            background: linear-gradient(transparent, rgba(0,0,0,0.8));
             color: white;
-            padding: 20px;
+            padding: 15px;
             text-align: center;
-            font-size: 1.1em;
+            font-size: clamp(0.9em, 2.5vw, 1.1em);
         }
 
         @keyframes slideIn {
-            from { opacity: 0; transform: translateX(100px); }
+            from { opacity: 0; transform: translateX(50px); }
             to { opacity: 1; transform: translateX(0); }
         }
 
         @keyframes fadeInUp {
             from {
                 opacity: 0;
-                transform: translateY(50px);
+                transform: translateY(30px);
             }
             to {
                 opacity: 1;
@@ -226,18 +228,19 @@
         /* Navigation dots */
         .dots-container {
             text-align: center;
-            margin-top: 20px;
+            margin: 15px 0;
         }
 
         .dot {
-            height: 15px;
-            width: 15px;
-            margin: 0 5px;
+            height: 12px;
+            width: 12px;
+            margin: 0 4px;
             background-color: rgba(255, 255, 255, 0.3);
             border-radius: 50%;
             display: inline-block;
             cursor: pointer;
             transition: all 0.3s ease;
+            touch-action: manipulation;
         }
 
         .dot.active, .dot:hover {
@@ -250,9 +253,9 @@
         .love-letter {
             background: rgba(40, 40, 60, 0.9);
             backdrop-filter: blur(15px);
-            border-radius: 20px;
-            padding: 40px;
-            margin: 40px 0;
+            border-radius: 15px;
+            padding: clamp(20px, 5vw, 40px);
+            margin: 30px 0;
             box-shadow: 0 15px 35px rgba(255, 107, 157, 0.1);
             animation: fadeIn 2s ease-out 1s both;
             border: 2px solid rgba(255, 107, 157, 0.3);
@@ -261,25 +264,27 @@
         .love-letter h2 {
             color: #ff6b9d;
             text-shadow: 0 0 10px rgba(255, 107, 157, 0.3);
-            font-size: 2.2em;
-            margin-bottom: 20px;
+            font-size: clamp(1.5em, 4vw, 2.2em);
+            margin-bottom: 15px;
             text-align: center;
         }
 
         .love-letter p {
             color: #e0e0e0;
-            line-height: 1.8;
-            font-size: 1.1em;
-            margin-bottom: 15px;
+            line-height: 1.6;
+            font-size: clamp(0.9em, 2.5vw, 1.1em);
+            margin-bottom: 12px;
             text-align: justify;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
         }
 
         .signature {
             text-align: right;
-            margin-top: 30px;
+            margin-top: 20px;
             font-style: italic;
             color: #c77dff;
-            font-size: 1.2em;
+            font-size: clamp(1em, 2.5vw, 1.2em);
         }
 
         @keyframes fadeIn {
@@ -290,7 +295,7 @@
         /* Surprise Button */
         .surprise-section {
             text-align: center;
-            margin: 50px 0;
+            margin: 40px 0;
             animation: fadeIn 2s ease-out 1.5s both;
         }
 
@@ -298,8 +303,8 @@
             background: linear-gradient(45deg, #ff6b6b, #ee5a24);
             color: white;
             border: none;
-            padding: 20px 40px;
-            font-size: 1.3em;
+            padding: clamp(15px, 4vw, 20px) clamp(30px, 8vw, 40px);
+            font-size: clamp(1.1em, 3vw, 1.3em);
             border-radius: 50px;
             cursor: pointer;
             box-shadow: 0 8px 25px rgba(255, 107, 107, 0.3);
@@ -307,21 +312,23 @@
             font-weight: bold;
             text-transform: uppercase;
             letter-spacing: 1px;
+            touch-action: manipulation;
+            -webkit-appearance: none;
         }
 
-        .surprise-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 12px 35px rgba(255, 107, 107, 0.4);
+        .surprise-btn:hover, .surprise-btn:active {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(255, 107, 107, 0.4);
         }
 
         .surprise-message {
             display: none;
             background: linear-gradient(135deg, #3a1f5c 0%, #2d1b4e 100%);
             color: white;
-            padding: 30px;
-            border-radius: 20px;
-            margin-top: 30px;
-            font-size: 1.4em;
+            padding: clamp(20px, 5vw, 30px);
+            border-radius: 15px;
+            margin-top: 20px;
+            font-size: clamp(1.1em, 3vw, 1.4em);
             text-align: center;
             box-shadow: 0 15px 35px rgba(255, 107, 157, 0.2);
             animation: surpriseReveal 1s ease-out;
@@ -353,7 +360,7 @@
             position: absolute;
             color: #ff6b9d;
             text-shadow: 0 0 10px rgba(255, 107, 157, 0.5);
-            font-size: 30px;
+            font-size: clamp(20px, 5vw, 30px);
             animation: floatUp 4s ease-out infinite;
             opacity: 0;
         }
@@ -386,7 +393,7 @@
 
         .touch-flower {
             position: absolute;
-            font-size: 25px;
+            font-size: clamp(18px, 5vw, 25px);
             animation: bloomAndFade 2s ease-out forwards;
             opacity: 0;
             transform-origin: center;
@@ -431,27 +438,6 @@
             }
         }
 
-        /* Light mode flower colors */
-        body.light-mode .touch-flower.pink {
-            color: #ff1493;
-            text-shadow: 0 0 5px rgba(255, 20, 147, 0.4);
-        }
-
-        body.light-mode .touch-flower.purple {
-            color: #9370db;
-            text-shadow: 0 0 5px rgba(147, 112, 219, 0.4);
-        }
-
-        body.light-mode .touch-flower.white {
-            color: #696969;
-            text-shadow: 0 0 5px rgba(105, 105, 105, 0.4);
-        }
-
-        body.light-mode .touch-flower.rose {
-            color: #dc143c;
-            text-shadow: 0 0 5px rgba(220, 20, 60, 0.4);
-        }
-
         /* Audio controls */
         .audio-controls {
             position: fixed;
@@ -459,7 +445,7 @@
             right: 80px;
             background: rgba(40, 40, 60, 0.9);
             backdrop-filter: blur(10px);
-            padding: 10px;
+            padding: 12px;
             border-radius: 50px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
             z-index: 10;
@@ -468,13 +454,16 @@
         .audio-btn {
             background: none;
             border: none;
-            font-size: 24px;
+            font-size: clamp(20px, 5vw, 24px);
             cursor: pointer;
             color: #ff6b9d;
             transition: transform 0.3s ease;
+            touch-action: manipulation;
+            -webkit-appearance: none;
+            padding: 5px;
         }
 
-        .audio-btn:hover {
+        .audio-btn:hover, .audio-btn:active {
             transform: scale(1.1);
         }
 
@@ -485,7 +474,7 @@
             right: 20px;
             background: rgba(40, 40, 60, 0.9);
             backdrop-filter: blur(10px);
-            padding: 10px;
+            padding: 12px;
             border-radius: 50px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
             z-index: 10;
@@ -494,17 +483,20 @@
         .theme-btn {
             background: none;
             border: none;
-            font-size: 24px;
+            font-size: clamp(20px, 5vw, 24px);
             cursor: pointer;
             color: #ff6b9d;
             transition: transform 0.3s ease;
+            touch-action: manipulation;
+            -webkit-appearance: none;
+            padding: 5px;
         }
 
-        .theme-btn:hover {
+        .theme-btn:hover, .theme-btn:active {
             transform: scale(1.1);
         }
 
-        /* Light Mode Styles (when toggled) */
+        /* Light Mode Styles */
         body.light-mode {
             background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 50%, #fecfef 100%);
         }
@@ -581,20 +573,93 @@
             text-shadow: none;
         }
 
-        /* Responsive Design */
+        body.light-mode .touch-flower.pink {
+            color: #ff1493;
+            text-shadow: 0 0 5px rgba(255, 20, 147, 0.4);
+        }
+
+        body.light-mode .touch-flower.purple {
+            color: #9370db;
+            text-shadow: 0 0 5px rgba(147, 112, 219, 0.4);
+        }
+
+        body.light-mode .touch-flower.white {
+            color: #696969;
+            text-shadow: 0 0 5px rgba(105, 105, 105, 0.4);
+        }
+
+        body.light-mode .touch-flower.rose {
+            color: #dc143c;
+            text-shadow: 0 0 5px rgba(220, 20, 60, 0.4);
+        }
+
+        /* Mobile-specific improvements */
         @media (max-width: 768px) {
-            .header h1 {
-                font-size: 2.5em;
+            .container {
+                padding: 10px;
+            }
+            
+            .header {
+                margin: 15px 0 25px 0;
+            }
+            
+            .slideshow-container {
+                margin: 20px auto;
+                border-radius: 12px;
             }
             
             .love-letter {
-                padding: 20px;
-                margin: 20px 10px;
+                margin: 25px 0;
+                border-radius: 12px;
             }
             
-            .surprise-btn {
-                padding: 15px 30px;
-                font-size: 1.1em;
+            .surprise-section {
+                margin: 30px 0;
+            }
+            
+            .audio-controls {
+                bottom: 15px;
+                right: 65px;
+                padding: 10px;
+            }
+            
+            .theme-toggle {
+                bottom: 15px;
+                right: 15px;
+                padding: 10px;
+            }
+            
+            .heart {
+                font-size: 14px;
+            }
+        }
+
+        /* Very small screens */
+        @media (max-width: 480px) {
+            .container {
+                padding: 8px;
+            }
+            
+            .header h1 {
+                word-break: break-word;
+            }
+            
+            .love-letter p {
+                font-size: 0.95em;
+                line-height: 1.5;
+            }
+            
+            .audio-controls, .theme-toggle {
+                bottom: 10px;
+                padding: 8px;
+            }
+            
+            .audio-controls {
+                right: 60px;
+            }
+            
+            .theme-toggle {
+                right: 10px;
             }
         }
     </style>
@@ -622,19 +687,19 @@
         <!-- Photo Slideshow -->
         <div class="slideshow-container">
             <div class="slide active">
-                <img src="./688b39cc79cee_download.jpg" alt="My Cutest Wifey🥰">
+                <img src="./688b39cc79cee_download.jpg" alt="My Cutest Wifey🥰" loading="lazy">
                 <div class="slide-caption">My Cutest Wifey🥰</div>
             </div>
             <div class="slide">
-                <img src="./688b3c83cbeed_download.jpg" alt="Bbtime Together Chibili 🥰">
+                <img src="./688b3c83cbeed_download.jpg" alt="Bbtime Together Chibili 🥰" loading="lazy">
                 <div class="slide-caption">Bbtime Together Chibili 🥰</div>
             </div>
             <div class="slide">
-                <img src="./688b402de4d5f_download.jpg" alt="Our First Picuture Together 🥰">
-                <div class="slide-caption">Our First Picuture Together 🥰</div>
+                <img src="./688b402de4d5f_download.jpg" alt="Our First Picture Together 🥰" loading="lazy">
+                <div class="slide-caption">Our First Picture Together 🥰</div>
             </div>
             <div class="slide">
-                <img src="./adventure-us.jpg" alt="Adventure">
+                <img src="./adventure-us.jpg" alt="Adventure" loading="lazy">
                 <div class="slide-caption">Every adventure is better with you 🎈</div>
             </div>
         </div>
@@ -650,19 +715,19 @@
         <div class="love-letter">
             <h2>My Dearest Wifey,</h2>
             <p>
-                Happy 13th Monthsary po saatin wifey koo 🥀 🥰, thank you po sa walang sawa pag unawa mo po sakin ng ganito po katagal wifey ko 🥰. Thank you sooo much po for staying with me po wifey koo 🥰, even na inaaway po kita palagi wifey ko. I'm sorry po wifey ko dahil lagi po tayo magkaaway last few days wifey ko, sobrang papasalamat ko po kasi hindi ka po nag sawang intindihin ako wifey ko kahit minsan nakakapagod na po intindihin wifey ko, thank you so much po wifey koo kasi pinili mo padin po na mag stay sakin wifey ko. I wanna take care of you and be with you till forever wifey ko i love you more than you could know wifey ko 🥰. Tatandaan mo po wifey lagi akong proud sayo wifey ko ay sa kakayahan mo po wifey kaya goodluck po sa tatahakin mo pong landas papuntang tagumpay lagi lang po naka suporta sayo hubby mo po wifey ko 🥰. Sana wag ka po mag sawa na mahalin po ako wifey ko ha alam ko na minsan na kakapagod din po ako mahalin wifey ko, pahinga kalang po sakin wifey ko pag napagod ka po wifey ko 🥰. Iintindihin po kita kahit katulad po ng pag iintindi mo po sakin wifey ko 🥰, never po kitang iiwan because i love you more than you think wifey ko 🥰, i will love you po unconditionally wifey ko, mamahalin po kita wifey ko kahit na malayo po tayo sa isa't-isa wifey kasi kahit na anong layo pa hangganan natin walang makakapigil ng pag mamahal ko po sayo wifey ko 🥰. Kasi alam kona ma lalampasan din po natin pagsubok na to wifey ko, kays stay strong lang po wifey ko ha, Lagi ka po mag iingat dyan wifey ko ha kasi mag papakasal pa tayo wifey koo. Sana po hindi mo po iwan hubby mo po if mawala man po spark mo po wifey ko if mawalan man po gawa ka po ng paraan para po bumalik po spark wifey koo. Im glad met you po wifey ko, you are the greatest gift I've ever received in my life wifey ko 🥰. Wala pong iwanan wifey ko ha, laban lang po through ups and downs wifey koo 🥰, Mwaaaah😘 i love you so much misis koooo 💖 Happy 13th Monthsary saatin asawa koo 🥀🥰 Mwaaaahhhhhhhhhh 😘 mahal na mahal po kitaaaaa asawa ko 🥰, Moreee moree days, months, years to come to us wifey ko 🥰
+                Happy 13th Monthsary po saatin wifey koo 🥀 🥰, thank you po sa walang sawa pag unawa mo po sakin ng ganito po katagal wifey ko 🥰. Thank you sooo much po for staying with me po wifey koo 🥰, even na inaaway po kita palagi wifey ko. I'm sorry po wifey ko dahil lagi po tayo magkaaway last few days wifey ko, sobrang papasalamat ko po kasi hindi ka po nag sawang intindihin ako wifey ko kahit minsan nakakapagod na po intindihin wifey ko, thank you so much po wifey koo kasi pinili mo padin po na mag stay sakin wifey ko. I wanna take care of you and be with you till forever wifey ko i love you more than you could know wifey ko 🥰.
             </p>
             <p>
-                Another month has passed, and with each day, my love for you grows stronger. You bring sunshine to my darkest days and make every moment feel like a beautiful dream.
+                Tatandaan mo po wifey lagi akong proud sayo wifey ko ay sa kakayahan mo po wifey kaya goodluck po sa tatahakin mo pong landas papuntang tagumpay lagi lang po naka suporta sayo hubby mo po wifey ko 🥰. Sana wag ka po mag sawa na mahalin po ako wifey ko ha alam ko na minsan na kakapagod din po ako mahalin wifey ko, pahinga kalang po sakin wifey ko pag napagod ka po wifey ko 🥰.
             </p>
             <p>
-                From our first conversation to this very moment, you've filled my life with laughter, joy, and endless happiness. Your smile lights up my world, and your love gives me strength.
+                Iintindihin po kita kahit katulad po ng pag iintindi mo po sakin wifey ko 🥰, never po kitang iiwan because i love you more than you think wifey ko 🥰, i will love you po unconditionally wifey ko, mamahalin po kita wifey ko kahit na malayo po tayo sa isa't-isa wifey kasi kahit na anong layo pa hangganan natin walang makakapigil ng pag mamahal ko po sayo wifey ko 🥰.
             </p>
             <p>
-                Thank you for being my partner, my best friend, and my everything. Here's to many more months of love, adventures, and beautiful memories together.
+                Kasi alam kona ma lalampasan din po natin pagsubok na to wifey ko, kays stay strong lang po wifey ko ha, Lagi ka po mag iingat dyan wifey ko ha kasi mag papakasal pa tayo wifey koo. Sana po hindi mo po iwan hubby mo po if mawala man po spark mo po wifey ko if mawalan man po gawa ka po ng paraan para po bumalik po spark wifey koo.
             </p>
             <p>
-                Every day with you is a gift, and I can't wait to see what the future holds for us. You are my heart, my soul, and my forever.
+                Im glad met you po wifey ko, you are the greatest gift I've ever received in my life wifey ko 🥰. Wala pong iwanan wifey ko ha, laban lang po through ups and downs wifey koo 🥰, Mwaaaah😘 i love you so much misis koooo 💖 Happy 13th Monthsary saatin asawa koo 🥀🥰 Mwaaaahhhhhhhhhh 😘 mahal na mahal po kitaaaaa asawa ko 🥰, Moreee moree days, months, years to come to us wifey ko 🥰
             </p>
             <div class="signature">
                 With all my love,<br>
@@ -694,22 +759,10 @@
 
     <!-- Hidden Audio Element -->
     <audio id="loveSong" loop preload="auto">
-        <!-- Your downloaded song - replace with actual filename -->
         <source src="./Attack on Titan Call of Silence REQUIEM _ Wedding Orchestra Version(MP3_320K).mp3" type="audio/mpeg">
         <source src="./our-special-song.wav" type="audio/wav">
-        
-        <!-- Fallback gentle sounds -->
-        <source src="https://www.soundjay.com/misc/sounds/magic-chime-02.wav" type="audio/wav">
-        
         Your browser does not support the audio element.
     </audio>
-
-    <!-- Song info (hidden by default) -->
-    <div style="display: none;" id="songInfo">
-        <p style="text-align: center; color: #888; font-size: 0.9em; margin-top: 10px;">
-            🎵 Now playing: Our special song ✨
-        </p>
-    </div>
 
     <script>
         // Slideshow functionality
@@ -747,7 +800,7 @@
         
         setInterval(nextSlide, 4000);
 
-        // Falling hearts
+        // Falling hearts - reduced frequency for mobile
         function createFallingHeart() {
             let heart = document.createElement('div');
             heart.classList.add('heart');
@@ -758,11 +811,15 @@
             document.querySelector('.falling-hearts').appendChild(heart);
             
             setTimeout(() => {
-                heart.remove();
+                if (heart.parentNode) {
+                    heart.remove();
+                }
             }, 5000);
         }
         
-        setInterval(createFallingHeart, 300);
+        // Reduced frequency for mobile performance
+        const isMobile = window.innerWidth <= 768;
+        setInterval(createFallingHeart, isMobile ? 500 : 300);
 
         // Surprise function
         function showSurprise() {
@@ -772,15 +829,15 @@
             surprise.style.display = 'block';
             btn.style.display = 'none';
             
-            // Create floating hearts
             createFloatingHearts();
         }
 
         function createFloatingHearts() {
             const heartsContainer = document.getElementById('floatingHearts');
             const heartEmojis = ['💖', '💕', '💗', '💝', '💘'];
+            const heartCount = isMobile ? 10 : 15;
             
-            for (let i = 0; i < 15; i++) {
+            for (let i = 0; i < heartCount; i++) {
                 setTimeout(() => {
                     let heart = document.createElement('div');
                     heart.classList.add('floating-heart');
@@ -790,7 +847,9 @@
                     heartsContainer.appendChild(heart);
                     
                     setTimeout(() => {
-                        heart.remove();
+                        if (heart.parentNode) {
+                            heart.remove();
+                        }
                     }, 4000);
                 }, i * 200);
             }
@@ -800,41 +859,26 @@
         let isPlaying = false;
         const audio = document.getElementById('loveSong');
         const audioBtn = document.getElementById('audioBtn');
-        const songInfo = document.getElementById('songInfo');
 
         function toggleMusic() {
             if (isPlaying) {
                 audio.pause();
                 audioBtn.innerHTML = '🎵';
-                songInfo.style.display = 'none';
                 isPlaying = false;
             } else {
                 audio.play().catch(e => {
                     console.log('Audio play failed:', e);
-                    // Fallback: show a message
-                    alert('Click anywhere on the page first, then try the music button!');
+                    // Mobile-friendly fallback
+                    audioBtn.innerHTML = '🎵';
+                    alert('Tap the music button again to play!');
                 });
                 audioBtn.innerHTML = '🔇';
-                songInfo.style.display = 'block';
                 isPlaying = true;
             }
         }
 
-        // Auto-play attempt (browsers often block this)
-        window.addEventListener('load', () => {
-            setTimeout(() => {
-                audio.play().then(() => {
-                    audioBtn.innerHTML = '🔇';
-                    songInfo.style.display = 'block';
-                    isPlaying = true;
-                }).catch(e => {
-                    console.log('Auto-play blocked by browser');
-                });
-            }, 3000); // Wait 3 seconds before auto-play attempt
-        });
-
-        // Theme Toggle (Dark mode is now default)
-        let isDarkMode = true; // Start in dark mode
+        // Theme Toggle (Dark mode is default)
+        let isDarkMode = true;
         const themeBtn = document.getElementById('themeBtn');
 
         function toggleTheme() {
@@ -849,34 +893,22 @@
             }
         }
 
-        // Allow music to play after user interaction
-        document.addEventListener('click', function() {
-            if (!isPlaying) {
-                audio.play().catch(e => console.log('Audio play failed'));
-                audioBtn.innerHTML = '🔇';
-                isPlaying = true;
-            }
-        }, { once: true });
-
-        // Create Starry Background
+        // Create Starry Background - optimized for mobile
         function createStars() {
             const starsContainer = document.getElementById('starsContainer');
             const starSizes = ['small', 'medium', 'large', 'bright'];
+            const starCount = isMobile ? 100 : 200; // Fewer stars on mobile
             
-            // Create 200 stars
-            for (let i = 0; i < 200; i++) {
+            for (let i = 0; i < starCount; i++) {
                 const star = document.createElement('div');
                 star.classList.add('star');
                 
-                // Random size
                 const size = starSizes[Math.floor(Math.random() * starSizes.length)];
                 star.classList.add(size);
                 
-                // Random position
                 star.style.left = Math.random() * 100 + '%';
                 star.style.top = Math.random() * 100 + '%';
                 
-                // Random animation duration and delay
                 star.style.animationDuration = (Math.random() * 3 + 2) + 's';
                 star.style.animationDelay = Math.random() * 3 + 's';
                 
@@ -884,87 +916,139 @@
             }
         }
 
-        // Create shooting stars
+        // Create shooting stars - less frequent on mobile
         function createShootingStar() {
             const shootingStar = document.createElement('div');
             shootingStar.classList.add('shooting-star');
             
-            // Random starting position (top and left edges)
             shootingStar.style.left = Math.random() * 50 + '%';
             shootingStar.style.top = Math.random() * 50 + '%';
-            
-            // Random animation duration
             shootingStar.style.animationDuration = (Math.random() * 2 + 1) + 's';
             
             document.body.appendChild(shootingStar);
             
-            // Remove after animation
             setTimeout(() => {
-                shootingStar.remove();
+                if (shootingStar.parentNode) {
+                    shootingStar.remove();
+                }
             }, 3000);
         }
 
-        // Initialize stars when page loads
+        // Initialize when page loads
         window.addEventListener('load', () => {
             createStars();
             
-            // Create shooting stars periodically
-            setInterval(createShootingStar, 8000); // Every 8 seconds
+            // Less frequent shooting stars on mobile
+            const shootingStarInterval = isMobile ? 12000 : 8000;
+            setInterval(createShootingStar, shootingStarInterval);
         });
 
-        // Touch/Click Flowers Effect
+        // Touch/Click Flowers Effect - optimized for mobile
         const touchFlowersContainer = document.getElementById('touchFlowers');
         const flowerEmojis = ['🌸', '🌺', '🌻', '🌷', '🌹', '💐', '🌼', '🏵️'];
         const flowerColors = ['pink', 'purple', 'white', 'rose'];
 
         function createTouchFlowers(x, y) {
-            // Create multiple flowers for each touch
-            for (let i = 0; i < 5; i++) {
+            const flowerCount = isMobile ? 3 : 5; // Fewer flowers on mobile
+            
+            for (let i = 0; i < flowerCount; i++) {
                 setTimeout(() => {
                     const flower = document.createElement('div');
                     flower.classList.add('touch-flower');
                     
-                    // Random flower emoji and color
                     flower.innerHTML = flowerEmojis[Math.floor(Math.random() * flowerEmojis.length)];
                     flower.classList.add(flowerColors[Math.floor(Math.random() * flowerColors.length)]);
                     
-                    // Position around the click point
-                    const offsetX = (Math.random() - 0.5) * 60; // Random offset within 60px
-                    const offsetY = (Math.random() - 0.5) * 60;
+                    const offsetRange = isMobile ? 40 : 60; // Smaller offset on mobile
+                    const offsetX = (Math.random() - 0.5) * offsetRange;
+                    const offsetY = (Math.random() - 0.5) * offsetRange;
                     
                     flower.style.left = (x + offsetX) + 'px';
                     flower.style.top = (y + offsetY) + 'px';
                     
                     touchFlowersContainer.appendChild(flower);
                     
-                    // Remove flower after animation
                     setTimeout(() => {
-                        flower.remove();
+                        if (flower.parentNode) {
+                            flower.remove();
+                        }
                     }, 2000);
-                }, i * 100); // Stagger the flowers
+                }, i * 100);
             }
         }
 
-        // Add click/touch event listeners
+        // Click event for desktop
         document.addEventListener('click', function(e) {
             createTouchFlowers(e.clientX, e.clientY);
         });
 
-        // Touch events for mobile
+        // Touch events for mobile - improved handling
+        let lastTouchTime = 0;
+        const touchThrottle = 100; // Throttle touch events to improve performance
+
         document.addEventListener('touchstart', function(e) {
-            e.preventDefault(); // Prevent default touch behavior
+            const now = Date.now();
+            if (now - lastTouchTime < touchThrottle) return;
+            lastTouchTime = now;
+            
             const touch = e.touches[0];
             createTouchFlowers(touch.clientX, touch.clientY);
-        }, { passive: false });
+        }, { passive: true });
 
-        // Handle multiple touches
+        // Handle multiple touches but throttled
         document.addEventListener('touchmove', function(e) {
-            e.preventDefault();
-            for (let i = 0; i < e.touches.length; i++) {
-                const touch = e.touches[i];
+            const now = Date.now();
+            if (now - lastTouchTime < touchThrottle * 2) return; // More throttling for move
+            lastTouchTime = now;
+            
+            if (e.touches.length <= 2) { // Limit to 2 touches max
+                const touch = e.touches[0];
                 createTouchFlowers(touch.clientX, touch.clientY);
             }
-        }, { passive: false });
+        }, { passive: true });
+
+        // Optimize performance for mobile
+        if (isMobile) {
+            // Reduce animation frequency when page is not visible
+            document.addEventListener('visibilitychange', function() {
+                if (document.hidden) {
+                    // Pause non-essential animations when tab is not active
+                    document.body.style.animationPlayState = 'paused';
+                } else {
+                    document.body.style.animationPlayState = 'running';
+                }
+            });
+        }
+
+        // Allow music to play after user interaction - mobile friendly
+        let userInteracted = false;
+        const enableAudio = () => {
+            if (!userInteracted) {
+                userInteracted = true;
+                audio.load(); // Reload audio for mobile compatibility
+            }
+        };
+
+        document.addEventListener('touchstart', enableAudio, { once: true });
+        document.addEventListener('click', enableAudio, { once: true });
+
+        // Prevent zoom on double tap for better mobile experience
+        let lastTouchEnd = 0;
+        document.addEventListener('touchend', function (event) {
+            const now = (new Date()).getTime();
+            if (now - lastTouchEnd <= 300) {
+                event.preventDefault();
+            }
+            lastTouchEnd = now;
+        }, false);
+
+        // Handle orientation change
+        window.addEventListener('orientationchange', function() {
+            setTimeout(() => {
+                // Recalculate dimensions after orientation change
+                window.scrollTo(0, 1);
+            }, 100);
+        });
     </script>
 </body>
 </html>
