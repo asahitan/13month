@@ -228,6 +228,8 @@
 // calling an HTTP address directly ("mixed content").
 const API_BASE = "https://antispam-relay.onrender.com";
 
+// --- Modules grid ---
+try {
 const modules = [
   {tag:"/antispam", name:"Anti-Spam", tick:"var(--ok)", desc:"Detects flooding and repeated messages, deletes them, and escalates through warnings, timeouts, kicks or bans."},
   {tag:"/antibot", name:"Anti-Bot", tick:"var(--ok)", desc:"Watches for bot-account raids joining your server and reacts automatically."},
@@ -249,7 +251,10 @@ document.getElementById("modules-grid").innerHTML = modules.map(m => `
     <h3>${m.name}</h3>
     <p>${m.desc}</p>
   </div>`).join("");
+} catch(e) { console.error("Modules render failed:", e); }
 
+// --- Command reference table ---
+try {
 const commands = [
   ["/antispam enable", "Turn anti-spam protection on for this server"],
   ["/antispam disable-all", "Turn off every anti-spam system at once"],
@@ -271,7 +276,10 @@ const commands = [
 ];
 document.getElementById("cmd-body").innerHTML = commands.map(c =>
   `<tr><td><code>${c[0]}</code></td><td>${c[1]}</td></tr>`).join("");
+} catch(e) { console.error("Commands render failed:", e); }
 
+// --- Dropdown menu ---
+try {
 const menuBtn = document.getElementById("menuBtn");
 const dropdownMenu = document.getElementById("dropdownMenu");
 
@@ -294,7 +302,10 @@ document.addEventListener("click", (e) => {
 document.addEventListener("keydown", (e) => { if(e.key === "Escape") closeDropdown(); });
 dropdownMenu.querySelectorAll(".dropdown-item").forEach(a => a.addEventListener("click", closeDropdown));
 window.addEventListener("scroll", closeDropdown, {passive:true});
+} catch(e) { console.error("Dropdown wiring failed:", e); }
 
+// --- Announcements feed ---
+try {
 function escapeHtml(s){
   return String(s).replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 }
@@ -306,6 +317,7 @@ function fmtAnnTime(iso){
 }
 async function loadAnnouncements(){
   const list = document.getElementById("announcements-list");
+  if(!list) return;
   try{
     const res = await fetch(`${API_BASE}/api/announcements`, {cache:"no-store"});
     if(!res.ok) throw new Error("bad response");
@@ -331,7 +343,10 @@ async function loadAnnouncements(){
 }
 loadAnnouncements();
 setInterval(loadAnnouncements, 30000);
+} catch(e) { console.error("Announcements setup failed:", e); }
 
+// --- Live stats ---
+try {
 function fmt(n){ return new Intl.NumberFormat().format(n); }
 function fmtUptime(s){
   const h = Math.floor(s/3600), m = Math.floor((s%3600)/60);
@@ -341,15 +356,10 @@ function fmtUptime(s){
 async function loadStats(){
   const dot = document.getElementById("status-dot");
   const text = document.getElementById("status-text");
+  if(!text) return;
   try{
     const res = await fetch(API_BASE, {cache:"no-store"});
     if(!res.ok) throw new Error("bad response");
     const d = await res.json();
     document.getElementById("s-guilds").textContent = fmt(d.guild_count);
-    document.getElementById("s-members").textContent = fmt(d.member_count);
-    document.getElementById("s-blocked").textContent = fmt(d.blocked_messages);
-    document.getElementById("s-warnings").textContent = fmt(d.warnings_issued);
-    document.getElementById("uptime").textContent = fmtUptime(d.uptime_seconds);
-    text.textContent = d.online ? "connected to bot" : "bot offline";
-    text.className = d.online ? "status-live" : "status-off";
-    document.getElementById("navdot").style.background = d.on
+    document.getElementById("s-members").textContent = fmt(d.
